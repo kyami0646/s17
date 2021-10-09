@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>status</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>current_page</th>
+        </tr>
+    </thead>
+    <tbody>    
+
+            <tr>
+            <h1>status</h1>
+                {% for row in status %}
+                <th>{{row.name}}:{{row.current_page}}</th>
+                {% endfor %}
+
+            </tr>
+    </tbody>
+</table>
+
+{% endblock %}
