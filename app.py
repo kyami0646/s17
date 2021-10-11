@@ -62,7 +62,7 @@ def updata():
     return render_template("edit.html",text_id = text_id)
 
 
-@app.route("/edit" ,methods=["GET","POST"])
+@app.route("/textbook_Delete" ,methods=["GET","POST"])
 def edit():
     current = request.form.get("current_page")
     engine.execute('UPDATE textbooks SET current_page = ? where id = ?',current,id)

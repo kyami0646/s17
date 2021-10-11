@@ -3,9 +3,21 @@
 body {
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
     "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  text-align: center;
 }
 
-/* ナビゲーション */
+img {
+  width: 100%;
+}
+/* layout.htmlここから */
+.page_title {
+  text-align: center;
+  font-family: Klee;
+  font-size: 35px;
+  color: #707070;
+}
+
+/* ナビゲーションここから */
 #g-nav {
   position: fixed;
   z-index: -1;
@@ -53,7 +65,7 @@ body {
   position: fixed;
   z-index: 9999;
   top: 10px;
-  right: 10px;
+  /* right: 10px; */
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -98,4 +110,29 @@ body {
   left: 18px;
   transform: translateY(-6px) rotate(45deg);
   width: 30%;
+}
+/* ナビゲーション終わり */
+/* layout.html終わり */
+
+/* headerここから */
+#page_header {
+  color: #707070;
+  background-image: url(/static/メイン画像.jpeg);
+  min-height: 100vh;
+}
+
+.big_bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.main_title {
+  font-size: 46px;
+  font-family: Klee;
+}
+
+.sub_title {
+  font-size: 29px;
+  margin-left: 25px;
 }
