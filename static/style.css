@@ -155,4 +155,36 @@ img {
 
 .main_sentence {
   padding-top: 250px;
+  padding-bottom: 100px;
+}
+
+.register_sec {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.register_btn {
+  width: 160px;
+  height: 80px;
+  background-image: url(/static/長方形\ 7.png);
+  cursor: pointer;
+}
+
+.login_btn {
+  width: 160px;
+  height: 80px;
+  background-image: url(/static/長方形\ 8.png);
+  cursor: pointer;
+}
+
+.register_sentence {
+  display: block;
+  margin-top: 11px;
+}
+
+.login_sentence {
+  display: block;
+  margin-top: 11px;
 }

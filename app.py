@@ -13,6 +13,10 @@ id = 1
 def index():
     return render_template("index.html")
 
+@app.route("/login",methods=["GET"])
+def login():
+    return render_template("login.html")    
+
 
 @app.route("/register", methods=["POST"])
 def register():
@@ -25,7 +29,6 @@ def register():
     email = request.form.get("email")
     if not email:
         return render_template("failure.html")
- 
     engine.execute('INSERT INTO users(name,password,email) values(?,?,?)',name,password,email)
 
     return redirect("/registrants")
