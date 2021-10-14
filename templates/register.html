@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    register
+{% endblock %}
+
+{% block main %}
+    <div class="register_bg">
+        <form action="/register" method="POST">
+            <h1 class="sec_title">新規会員の登録</h1>
+            <p class="label">ユーザーネーム</p>
+            <input class="form" type="text" name="name" id="name">
+            <p class="label">メールアドレス</p>
+            <input class="form" type="email" name="email" id="email">
+            <p class="label">パスワード</p>
+            <input class="form" type="password" name="password" id="password">
+            <div class="register_btn form_btn">
+                <input class="submit" type="submit" value="登録する">
+            </div>    
+        </form>
+    </div>
+{% endblock %}

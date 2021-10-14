@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>TEXTBOOKS</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>all_page</th>
+            </tr>
+        </thead>
+        <tbody>    
+
+                <tr>
+                    <form action="/updata" method="post">
+                    <select name = "id">
+                    {% for textbook in textbooks %}
+                    <option  value="{{ textbook.id }}">{{ textbook.name }}:{{ textbook.id }}</option>
+                    {% endfor %}
+                    <input type="submit" value="SELECT">
+                </form>
+                </select>
+                </tr>
+        </tbody>
+    </table>
+{% endblock %}
