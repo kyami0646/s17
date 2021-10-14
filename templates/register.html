@@ -1,30 +1,22 @@
 {% extends "layout.html" %}
 
-{% block body %}
-    <h1>TEXTBOOK REGISTER</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>id</th>
-            </tr>
-        </thead>
-        <tbody>
+{% block title %}
+    register
+{% endblock %}
 
-        {% for textbook in textbooks %}
-            <tr>
-                <td>{{ textbook.name }}</td>
-                <td>{{ textbook.all_page  }}</td>
-            </tr>
-        {% endfor %}
-                <td>
-                    <form action="/textbook_register" method="post">
-                        <input name="id" type="hidden" value="{{ textbooks.id }}">
-                        <input autocomplete="off" autofocus name="name" placeholder="TEXTBOOK_NAME" type="text">
-                        <input autocomplete="off" autofocus name="all_page" placeholder="ALL-Page" type="integer">
-                        <input type="submit" value="textbook_register">
-                    </form>
-                </td>
-        </tbody>
-    </table>
+{% block main %}
+    <div class="register_bg">
+        <form action="/register" method="POST">
+            <h1 class="sec_title">新規会員の登録</h1>
+            <p class="label">ユーザーネーム</p>
+            <input class="form" type="text" name="name" id="name">
+            <p class="label">メールアドレス</p>
+            <input class="form" type="email" name="email" id="email">
+            <p class="label">パスワード</p>
+            <input class="form" type="password" name="password" id="password">
+            <div class="register_btn form_btn">
+                <input class="submit" type="submit" value="登録する">
+            </div>    
+        </form>
+    </div>
 {% endblock %}

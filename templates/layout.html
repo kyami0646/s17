@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/reset.css">
     <link rel="stylesheet" href="/static/style.css">
-    <title>study help</title>
+    <title>study help {% block title %}{% endblock %}</title>
 </head>
 <body>
     <header>
@@ -23,7 +23,7 @@
         <h1 class="page_title">Study help</h1>    
     </header>
     <main>
-        {% block body %}{% endblock %}
+        {% block main %}{% endblock %}
     </main>    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="/static/script.js"></script>

@@ -13,31 +13,19 @@ id = 1
 def index():
     return render_template("index.html")
 
-@app.route("/login",methods=["GET"])
+@app.route("/login",methods=["GET","POST"])
 def login():
     return render_template("login.html")    
 
 
-@app.route("/register", methods=["POST"])
+@app.route("/register", methods=["GET","POST"])
 def register():
-    name = request.form.get("name")
-    if not name:
-        return render_template("failure.html")
-    password = request.form.get("password")
-    if not password:
-        return render_template("failure.html")
-    email = request.form.get("email")
-    if not email:
-        return render_template("failure.html")
-    engine.execute('INSERT INTO users(name,password,email) values(?,?,?)',name,password,email)
-
-    return redirect("/registrants")
-
-@app.route("/registrants" ,methods=["GET","POST"])
-def registrants():
-    textbooks = engine.execute('SELECT * FROM users')
-    return render_template("register.html", textbooks=textbooks)
+    return render_template("register.html")
     
+
+@app.route("/home", methods={"GET","POST"})
+def home():
+    return render_template("home.html")    
 
 
 @app.route("/textbook_register" ,methods=["GET","POST"])
