@@ -5,5 +5,31 @@
 {% endblock %}
 
 {% block main %}
-    <a href=""></a>
+    <div class="main_container">
+        <div class="title_sec">
+            <img class="icon" src="/static/鉛筆アイコン.png" alt="鉛筆アイコン">
+            <h1 class="home_title">学習記録</h1>
+        </div>
+
+        <div class="main_contents">
+            <div class="text_image_sec">
+                <img class="text_image" src="/static/教材イメージ.png" alt="参考書の画像">
+                <p>教材の名前</p>
+            </div>    
+            <div class="pie">{{ number }}%</div>
+        </div>
+
+        <div class="main_contents">
+            <div class="text_image_sec">
+                <img class="text_image" src="/static/教材イメージ.png" alt="参考書の画像">
+                <p>教材の名前</p>
+            </div>    
+            <div class="pie">{{ number }}%</div>
+        </div>
+
+        <div class="title_sec">
+            <img class="icon" src="/static/タイマーアイコン.png" alt="タイマーアイコン">
+            <h1 class="home_title">学習時間</h1>
+        </div>
+    </div>    
 {% endblock %}

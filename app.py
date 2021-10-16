@@ -25,7 +25,8 @@ def register():
 
 @app.route("/home", methods={"GET","POST"})
 def home():
-    return render_template("home.html")    
+    number = 50
+    return render_template("home.html", number = number)    
 
 
 @app.route("/textbook_register" ,methods=["GET","POST"])
