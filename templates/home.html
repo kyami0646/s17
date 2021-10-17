@@ -14,22 +14,63 @@
         <div class="main_contents">
             <div class="text_image_sec">
                 <img class="text_image" src="/static/教材イメージ.png" alt="参考書の画像">
-                <p>教材の名前</p>
-            </div>    
-            <div class="pie">{{ number }}%</div>
+                <p class="text_name">教材の名前</p>
+            </div>
+            <div class="image_sec">
+                <canvas id="mychart2">
+                    
+                </canvas>
+                <p class="chart_txt">{{ number }}%</p>
+            </div>
         </div>
 
         <div class="main_contents">
             <div class="text_image_sec">
                 <img class="text_image" src="/static/教材イメージ.png" alt="参考書の画像">
-                <p>教材の名前</p>
-            </div>    
-            <div class="pie">{{ number }}%</div>
+                <p class="text_name">教材の名前</p>
+            </div>
+            <div class="image_sec">
+                <canvas id="mychart2">
+                    
+                </canvas>
+                <p class="chart_txt">{{ number }}%</p>
+            </div>
         </div>
 
+        
         <div class="title_sec">
             <img class="icon" src="/static/タイマーアイコン.png" alt="タイマーアイコン">
             <h1 class="home_title">学習時間</h1>
         </div>
     </div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script type="text/javascript">
+        const progress = {{number|tojson}};
+        const remaining = 100 - progress;
+        const ctx = document.getElementById("mychart2").getContext("2d");
+        const mychart = new Chart (ctx, {
+            type: 'doughnut' ,
+            data:{
+            labels:["M","T"],
+            datasets:[{
+            backgroundColor:[
+            "#376892",
+            "#90aac1"
+            ],
+            borderWidth:[0,0],
+            borderColor:["#90aac1","#90aac1"],
+            data:[progress,remaining]
+            }]
+            },
+            options:{
+            legend:{
+            display:false
+            },
+            tooltips:{
+            enabled:false
+            }
+            }
+            });
+            
+    </script>
 {% endblock %}
