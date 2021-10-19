@@ -7,3 +7,11 @@ class User(UserMixin,db.Model):
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     name = db.Column(db.String(1000))
+    
+ class Textbook(db.Model):
+    id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
+    user_id =db.Column(db.Integer)
+    all_page =db.Column(db.Integer)
+    current_page =db.Column(db.Integer)
+    name = db.Column(db.String(1000))
+    accumulated_time =db.Column(db.Integer,default=0)   
