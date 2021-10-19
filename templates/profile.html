@@ -4,4 +4,27 @@
 <h1 class="title">
   Welcome, {{ name }}!
 </h1>
+<h1>TEXTBOOK REGISTER</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number of Page</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+        </tr>
+
+            <td>
+                <form action="/textbook_register" method="post">
+                    <input autocomplete="off" autofocus name="name" placeholder="TEXTBOOK_NAME" type="text">
+                    <input autocomplete="off" autofocus name="all_page" placeholder="ALL-Page" type="integer">
+                    <input type="submit" value="textbook_register">
+                </form>
+            </td>
+    </tbody>
+</table>
 {% endblock %}
