@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>status</h1>
+<h1>{{ text_id.name }}</h1>
+<td>
+    <form action="/edit" method="post">
+        <input autocomplete="off" autofocus name="current_page" placeholder="Current_Page" type="integer">
+        <input type="submit" value="edit">
+    </form>
+ 
+    <form action="/time" method="post">
+        <input autocomplete="off" autofocus name="time" placeholder="TIME" type="integer">
+        <input type="submit" name="time" value="time">
+    </form>
+</td>
+</tr>
+{% endblock %}

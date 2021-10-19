@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>status</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>current_page</th>
+            <th>accumlated_time</th>
+        </tr>
+    </thead>
+    <tbody>    
+
+            <tr>
+                {% for row in status %}
+                <td>{{row.name}}</td>
+                <td>{{row.current_page}}</td>
+                <td>{{row.accumulated_time}}</td>
+                {% endfor %}
+            <h2>{{per}}</h2>
+            <h2>{{TIME}}</h2>
+            </tr>
+    </tbody>
+</table>
+
+{% endblock %}
