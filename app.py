@@ -26,20 +26,14 @@ def register():
 @app.route("/home", methods={"GET","POST"})
 def home():
     number = 50
-    return render_template("home.html", number = number)    
+    number2 = 30
+    return render_template("home.html", number = number, number2 = number2)    
 
 
 @app.route("/textbook_register" ,methods=["GET","POST"])
 def textbook_register():
-    name = request.form.get("name")
-    if not name:
-        return render_template("failure.html")
-    all_page = request.form.get("all_page")
-    if not all_page:
-        return render_template("failure.html")
-
-    engine.execute('INSERT INTO textbooks(name,all_page,user_id) values(?,?,?)',name,all_page,1)
-    return redirect("/textbooks")
+    
+    return render_template("textbook_register.html")
 
 @app.route("/textbooks" ,methods=["GET","POST"])
 def textbooks():
@@ -53,14 +47,13 @@ def updata():
     text_id = engine.execute('SELECT * FROM textbooks WHERE id=?',id)
     return render_template("edit.html",text_id = text_id)
 
+@app.route("/record" ,methods=["GET","POST"])
+def record():
+    return render_template("record.html")
 
 @app.route("/textbook_Delete" ,methods=["GET","POST"])
 def edit():
-    current = request.form.get("current_page")
-    engine.execute('UPDATE textbooks SET current_page = ? where id = ?',current,id)
-    status = engine.execute('SELECT *FROM textbooks')
-    return render_template("status.html",status=status)
-
+    return render_template("textbook_Delete.html")
 @app.route("/delete" ,methods=["GET","POST"])
 def delete():   
     engine.execute('DELETE from textbooks WHERE id = ?',id)

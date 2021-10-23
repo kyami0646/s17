@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    record
+{% endblock %}
+
+{% block main %}
+<div class="title_sec">
+    <h1 class="home_title">学習の記録</h1>
+</div>
+
+<h1 class="edit_title">どの教材を学習しましたか？</h1>
+
+<div class="edit_sec">
+
+    <div class="btn">
+        <a class="btn__link js-modal-open" href=""><img src="/static/教材イメージ.png" alt="参考書"></a>
+        <p>教材名</p>
+    </div>
+    <div class="modal js-modal">
+        <div class="modal__overlay js-modal-close"></div>
+        <div class="modal__content">
+            <img src="/static/教材イメージ.png" /><br>
+            <p>教材名</p><br>  
+            <form action="/record" method="POST">
+                <h1 class="record_title">勉強時間</h1>
+                <input class="record_form" type="time" name="study_time">
+                <h1 class="record_title">ページ数</h1>
+                <input class="record_form" type="text" name="page">
+                <h1 class="record_title">ひとことメモ</h1>
+                <textarea name="memo" cols="22" rows="2"></textarea>
+
+                <div class="sec_btn record_btn">
+                    <form action="/textbook_Delete" method="POST">
+                        <input class="submit" type="submit" value="記録する">
+                    </form>    
+                </div> 
+            </form>    
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

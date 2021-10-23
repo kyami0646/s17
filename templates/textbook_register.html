@@ -1,26 +1,27 @@
 {% extends "layout.html" %}
 
-{% block body %}
-    <h1>TEXTBOOKS</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>all_page</th>
-            </tr>
-        </thead>
-        <tbody>    
+{% block title %}
+    textbook register
+{% endblock %}
 
-                <tr>
-                    <form action="/updata" method="post">
-                    <select name = "id">
-                    {% for textbook in textbooks %}
-                    <option  value="{{ textbook.id }}">{{ textbook.name }}:{{ textbook.id }}</option>
-                    {% endfor %}
-                    <input type="submit" value="SELECT">
-                </form>
-                </select>
-                </tr>
-        </tbody>
-    </table>
+{% block main %}
+        <div class="title_sec">
+            <h1 class="home_title">教材の追加</h1>
+        </div>
+
+        <div class="textbook_container">
+            <img class="textbook" src="/static/教材イメージ.png" alt="参考書">
+            <form action="/textbook_register" method="POST">
+
+                <h1 class="textbook_title">教材名</h1>
+                <input class="textbook_form" type="text" name="textname">
+                <h1 class="textbook_title">ページ数</h1>
+                <input class="textbook_form" type="text" name="page">
+                <h1 class="textbook_title">終了予定日</h1>
+                <input class="textbook_form" type="date" name="day">
+                <div class="sec_btn form_btn">
+                    <input class="submit" type="submit" value="追加する">
+                </div> 
+            </form>
+        </div>
 {% endblock %}

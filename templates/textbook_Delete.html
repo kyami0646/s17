@@ -1,16 +1,73 @@
 {% extends "layout.html" %}
 
-{% block body %}
-<h1>status</h1>
-<h1>{{ text_id.name }}</h1>
-<td>
-    <form action="/edit" method="post">
-        <input autocomplete="off" autofocus name="current_page" placeholder="Current_Page" type="integer">
-        <input type="submit" value="edit">
-    </form>
-    <form action="/delete" method="post">
-        <input type="submit" name="delete" value="delete">
-    </form>
-</td>
-</tr>
+{% block title %}
+    textbook delete
+{% endblock %}
+
+{% block main %}
+
+<div class="title_sec">
+    <h1 class="home_title">教材の削除</h1>
+</div>
+
+
+<h1 class="edit_title">どの教材を削除しますか？</h1>
+
+<div class="edit_sec">
+
+    <div class="btn">
+        <a class="btn__link js-modal-open" href=""><img src="/static/教材イメージ.png" alt="参考書"></a>
+        <p>教材名</p>
+    </div>
+    <div class="modal js-modal">
+        <div class="modal__overlay js-modal-close"></div>
+        <div class="modal__content">
+            <img src="/static/教材イメージ.png" /><br>
+            <p>教材名</p>  
+            <p>この教材を削除します。<br>よろしいですか？</p>
+            <div class="sec_btn form_btn">
+                <form action="/textbook_Delete" method="POST">
+                    <input class="submit" type="submit" value="はい">
+                </form>    
+            </div> 
+        </div>
+    </div>
+
+    <div class="btn">
+        <a class="btn__link js-modal-open" href=""><img src="/static/教材イメージ.png" alt="参考書"></a>
+        <p>あかさたな</p>
+    </div>
+    <div class="modal js-modal">
+        <div class="modal__overlay js-modal-close"></div>
+        <div class="modal__content">
+            <img src="/static/教材イメージ.png" /><br>
+            <p>教材名</p>  
+            <p>この教材を削除します。<br>よろしいですか？</p>
+            <div class="sec_btn form_btn">
+                <form action="/textbook_Delete" method="POST">
+                    <input class="submit" type="submit" value="はい">
+                </form>    
+            </div> 
+        </div>
+    </div>
+
+    <div class="btn">
+        <a class="btn__link js-modal-open" href=""><img src="/static/教材イメージ.png" alt="参考書"></a>
+        <p>あああああ</p>
+    </div>
+    <div class="modal js-modal">
+        <div class="modal__overlay js-modal-close"></div>
+        <div class="modal__content">
+            <img src="/static/教材イメージ.png" /><br>
+            <p>教材名</p>  
+            <p>この教材を削除します。<br>よろしいですか？</p>
+            <div class="sec_btn form_btn">
+                <form action="/textbook_Delete" method="POST">
+                    <input class="submit" type="submit" value="はい">
+                </form>    
+            </div> 
+        </div>
+    </div>
+</div>
+
 {% endblock %}
